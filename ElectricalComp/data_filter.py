@@ -14,7 +14,7 @@ with open(data_file, "r") as fp:
 if len(sys.argv) < 2:
   print("specify action")
   print("display?")
-  print("filter?")
+  print("show?")
   exit(1)
 
 action = sys.argv[1]
@@ -48,7 +48,7 @@ elif action == "show" or action == "s":
     vals = []
     for prof_name, prof_data in profs.items():
       if key not in prof_data:
-        print(f"'{key}' not part of keys")
+        print(f"'{key}' not part of keys for '{prof_name}'")
       else:
         data = prof_data[key]
         if type(data) is list:

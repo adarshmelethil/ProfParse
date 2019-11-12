@@ -15,8 +15,8 @@ def printFailed(cur_prof_name, addr):
   print(f"FAILED: {cur_prof_name}: {addr}")
 
 
-if not os.path.exists("profs_list.json"):
-  if not os.path.exists("faculty-members.html"):
+if not os.path.exists(os.path.join("data", "profs_list.json")):
+  if not os.path.exists(os.path.join("data", "faculty-members.html")):
     profs_list_url = urllib.parse.urljoin(uofc_schulich_url, "/electrical-computer/faculty-members")
     print(f"Making request '{profs_list_url}'")
     res = requests.get(profs_list_url)
